@@ -21,7 +21,6 @@ export const ProductListPage = ({ shopSlug, themeKey, onThemeChange }: ProductLi
   const { data: sections = [], isLoading, isError, error } = useQuery({
     queryKey: ['product-sections', shopSlug],
     queryFn: () => fetchVendorProductSections(),
-    enabled: Boolean(shopSlug),
   });
 
   const products = useMemo(() => sections.flatMap((s) => s.products), [sections]);

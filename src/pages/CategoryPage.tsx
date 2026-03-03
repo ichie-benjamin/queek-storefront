@@ -26,7 +26,6 @@ export const CategoryPage = ({ shopSlug }: CategoryPageProps) => {
   const { data: sections = [], isLoading } = useQuery({
     queryKey: ['product-sections', effectiveSlug],
     queryFn: () => fetchVendorProductSections(),
-    enabled: Boolean(effectiveSlug),
     staleTime: 1000 * 60 * 5,
   });
 
